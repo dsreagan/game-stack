@@ -1,17 +1,18 @@
 import { Text, SimpleGrid } from "@chakra-ui/react"
+import { GameQuery } from "../App.js"
 import useGames, { Platform } from "../hooks/useGames.js"
 import { Genre } from "../hooks/useGenres.js"
 import GameCard from "./GameCard.js"
 import GameCardContainer from "./GameCardContainer.js"
 import GameCardSkeleton from "./GameCardSkeleton.js"
 
+
 interface Props {
-  selectedGenre: Genre | null
-  selectedPlatform: Platform | null
+  gameQuery: GameQuery
 }
 
-const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
-  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+const GameGrid = ({ gameQuery}: Props) => {
+  const { data, error, isLoading } = useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6]
   
   return (
