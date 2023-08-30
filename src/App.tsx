@@ -6,7 +6,7 @@ import GenreList from "./components/GenreList.js"
 import NavBar from "./components/NavBar.js"
 import PlatformSelector from "./components/PlatformSelector.js"
 import SortSelector from "./components/SortSelector.js"
-import { Platform } from "./hooks/useGames.js"
+import { Platform } from "./hooks/usePlatforms.js"
 import { Genre } from "./hooks/useGenres.js"
 
 export interface GameQuery {
