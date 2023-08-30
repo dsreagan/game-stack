@@ -26,7 +26,7 @@ export default function GenreList({ onSelectGenre, selectedGenre }: Props) {
     <>
       <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
       <List>
-        {data.map((genre: Genre) => (
+        {data?.results.map((genre: Genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image
