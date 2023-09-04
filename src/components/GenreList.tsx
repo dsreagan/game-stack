@@ -5,17 +5,17 @@ import {
   Image,
   List,
   ListItem,
-  Spinner
+  Spinner,
 } from "@chakra-ui/react"
-import useGenres, { Genre } from "../hooks/useGenres.js"
+import useGenres from "../hooks/useGenres.js"
+import { Genre } from "../entities/Genre"
 import getCroppedImageUrl from "../sevices/image-url.js"
 import useGameQueryStore from "../store.js"
 
-
 export default function GenreList() {
   const { data, isLoading, error } = useGenres()
-  const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId)
-  const setGenreId = useGameQueryStore(s => s.setGenreId)
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId)
+  const setGenreId = useGameQueryStore((s) => s.setGenreId)
 
   if (error) return null
 
@@ -23,7 +23,9 @@ export default function GenreList() {
 
   return (
     <>
-      <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {data?.results.map((genre: Genre) => (
           <ListItem key={genre.id} paddingY="5px">
